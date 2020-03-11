@@ -17,3 +17,5 @@ def student(name):
 	print('Name:', name)
 	print('Grade:', dictionaries.student_dict[name]['Grade'])
 	print('Classes:', ', '.join(dictionaries.student_dict[name]['Classes']))
+
+# this is a test to see if repl.it can commit to github correctly.
