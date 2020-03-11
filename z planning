@@ -1,0 +1,59 @@
+Plan:
+  Input: 
+    - student, classes, grades
+    - teachers, class(es), grade for each class 
+
+  Constraints:
+		- If two students are taking the same class but in different grades, then put them in two different periods 
+		- there can be no more than 7 periods in a day
+		- Teachers can only have ten students maximum per period
+		- Every student must have exactly 7 periods
+    - if there is a period when the student is not having class, make it 'free'
+    - the same teacher can't teach two or more different grade levels at the same time 
+
+	Outputs:
+		PHASE UNO
+      - return the number of active periods for a teacher 
+		PHASE TWO
+			- for a student name, return each period's classes
+			- for a teacher name, return every period's class
+      - 
+	
+
+
+GOAL 1: Assign periods to every student in student_dict[name][OrgClasses]
+
+	limit of students = 2 for now?
+
+	METHOD 1:
+
+	iterate through the classes the student is taking 
+	the first class in their list of classes becomes their first period, their second class listed becomes their second, and so only
+
+	NEXT PART: If multiple students are in the same grade and taking a common class, regardless of period, rearrange the classes of the students so that the common class falls under the same period 
+
+		I feel like this is too general -- what does rearrange really mean? how does it work? Wouldn't it be more efficient and a lot easier to start out by organizing?
+
+
+	METHOD 2:
+
+	sort through every class of a student, and rearrange in the same format (ex. math, biology)
+	iterate through the classes and assign to periods
+
+		Every student will have the same class type in the same order, which isn't exactly what we want.
+
+
+	METHOD 3:
+
+	iterate through every class of a student
+	for every class, go to very first/only option for that student and assign that class and period
+	for another student, once their classes have been iterated through,
+	if the class they want has another student in it, make the student's period for that class the same as the first
+	other than that, add 1 to the period
+
+		might be a little easier to have a student limit for a class on this one.
+
+
+
+
+
